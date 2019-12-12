@@ -17,10 +17,12 @@
                 />
                 <sui-header-content style="font-size:18px;">
                   {{user1}}
+
                   <sui-header-subheader
                     style="font-size:18px;"
                     placeholder="your score"
                   >{{score1}}</sui-header-subheader>
+
                 </sui-header-content>
               </h4>
             </sui-table-cell>
@@ -33,6 +35,7 @@
                 />
                 <sui-header-content style="font-size:18px;">
                   {{user2}}
+
                   <sui-header-subheader
                     style="font-size:18px;"
                     placeholder="your score"
@@ -49,6 +52,7 @@
                 />
                 <sui-header-content style="font-size:18px;">
                   {{user3}}
+
                   <sui-header-subheader
                     style="font-size:18px;"
                     placeholder="your score"
@@ -65,6 +69,7 @@
                 />
                 <sui-header-content style="font-size:18px;">
                   {{user4}}
+
                   <sui-header-subheader
                     style="font-size:18px;"
                     placeholder="your score"
@@ -86,6 +91,7 @@
         src="https://purepng.com/public/uploads/large/purepng.com-cloudnaturecloudsmoke-9615246757368kjiz.png"
         style="width:100px"
       />
+
       <input type="image" src="https://purepng.com/public/uploads/large/purepng.com-cloudnaturecloudsmoke-9615246757368kjiz.png" style="width:100px; height: 100px" id="myidb" ref="myidb" v-on:click.prevent="addScore(5)">
       <input type="image" src="https://purepng.com/public/uploads/large/purepng.com-cloudnaturecloudsmoke-9615246757368kjiz.png" style="width:100px; height: 100px" id="myidc" ref="myidc" v-on:click.prevent="addScore(10)">
       <input type="image" src="https://purepng.com/public/uploads/large/purepng.com-cloudnaturecloudsmoke-9615246757368kjiz.png" style="width:100px; height: 100px" id="myidd" ref="myidd" v-on:click.prevent="addScore(12)">
@@ -110,6 +116,7 @@
 </template>
 
 <script>
+
 import db from '../config/firestore'
 import router from '../router'
 export default {
@@ -327,9 +334,9 @@ export default {
   font-weight: bolder;
   width: auto;
 }
-
 #race {
-  background-image: url("../../../old-config/assets/Space-Phone-Wallpaper.jpg");
+  background-image: url("../assets/Space-Phone-Wallpaper.jpg");
+
   background-attachment: fixed;
   background-blend-mode: soft-light;
   background-size: contain;
@@ -367,28 +374,29 @@ export default {
   border: none;
   width: 70px;
   height: 70px;
-  background-image: url("../../../old-config/assets/muka.png");
+  /* background-image: url("../assets/muka.png"); */
+
   background-size: cover;
 }
 .nyamuk2 {
   border: none;
   width: 70px;
   height: 70px;
-  background-image: url("../../../old-config/assets/alien.png");
+
   background-size: cover;
 }
 .nyamuk3 {
   border: none;
   width: 70px;
   height: 70px;
-  background-image: url("../../../old-config/assets/taik.jpeg");
+
   background-size: cover;
 }
 .nyamuk4 {
   border: none;
   width: 70px;
   height: 70px;
-  background-image: url("../../../old-config/assets/kecoak1.jpeg");
+
   background-size: cover;
   background-position-x: center;
 }

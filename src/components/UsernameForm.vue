@@ -51,9 +51,10 @@
         </div>
       </sui-form>
     </div>
-    <audio autoplay loop>
-      <source src="../../../old-config/assets/Final Fantasy VII Chocobo Theme.mp3" type="audio/mp3">
-    </audio>
+    <!-- <audio autoplay loop>
+      <source src="../assets/Final Fantasy VII Chocobo Theme.mp3" type="audio/mp3" />
+    </audio>-->
+
   </div>
 </template>
 
@@ -75,24 +76,29 @@ export default {
       if (this.name.length > 0) this.$store.dispatch('createRoom', this.name)
       else {
         swal.fire({
-          title: 'input your name'
-        })
+          title: "please input your name",
+          icon: "warning"
+        });
+
       }
     },
     joined () {
       if (this.name.length > 0) this.joinOpt = true
       else {
         swal.fire({
-          title: 'input your name'
-        })
+          title: "please input your name",
+          icon: "warning"
+        });
       }
     },
     createRoom () {
       if (this.name.length > 0) this.$store.dispatch('createRoom', this.name)
       else {
         swal.fire({
-          title: 'input your name'
-        })
+          title: "input your name",
+          icon: "warning"
+        });
+
       }
       // this.name = ''
     },
@@ -105,8 +111,10 @@ export default {
         this.$store.dispatch('joinRoom', payload)
       } else {
         swal.fire({
-          title: 'input your name'
-        })
+          title: "input your name",
+          icon: "warning"
+        });
+
       }
     }
   }
