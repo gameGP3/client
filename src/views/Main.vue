@@ -13,49 +13,47 @@
     <Countdown v-if="ready"></Countdown>
     <Race id="race" v-if="raceNow"></Race>
     <audio autoplay loop>
-      <source src="../assets/Final Fantasy VII Chocobo Theme.mp3" type="audio/mp3" />
+      <source src="../../../old-config/assets/Final Fantasy VII Chocobo Theme.mp3" type="audio/mp3">
     </audio>
   </div>
 </template>
 
 <script>
-import Countdown from "@/components/Countdown";
-import Race from "@/components/Race";
-import db from "../config/firestore";
+import Countdown from '@/components/Countdown'
+import Race from '@/components/Race'
+import db from '../config/firestore'
 export default {
-  name: "Main",
+  name: 'Main',
   components: {
     Countdown,
     Race
   },
-  data() {
+  data () {
     return {
       ready: false,
       raceNow: false
-    };
+    }
   },
   methods: {
-    start() {
-      this.ready = true;
-      db.collection("rooms")
-        .doc(this.$store.state.roomID)
-        .update({ status: true })
+    start () {
+      this.ready = true
+      db.collection('rooms').doc(this.$store.state.roomID).update({ status: true })
         .then(() => {
           // this.started = true
           // this.check = true
-          this.$store.commit("UPDATE_STATUS", true);
+          this.$store.commit('UPDATE_STATUS', true)
         })
         .catch(err => {
-          this.$store.commit("UPDATE_STATUS", false);
-        });
-      setTimeout(this.race, 3500);
+          this.$store.commit('UPDATE_STATUS', false)
+        })
+      setTimeout(this.race, 3500)
     },
-    race() {
-      this.ready = false;
-      this.raceNow = true;
+    race () {
+      this.ready = false
+      this.raceNow = true
     }
   }
-};
+}
 </script>
 
 <style scoped>
@@ -69,12 +67,13 @@ export default {
 .startDiv {
   height: 46vh;
   width: 29.94%;
-  background-image: url("../assets/bugatti_gif.gif");
+  background-image: url("../../../old-config/assets/bugatti_gif.gif");
   background-size: contain;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 @media only screen and (max-width: 800px) {
   #main {
     display: flex;
@@ -90,7 +89,7 @@ export default {
     align-items: center;
     height: 50vh;
     width: 50%;
-    background-image: url("../assets/bugatti_gif.gif");
+    background-image: url("../../../old-config/assets/bugatti_gif.gif");
   }
 }
 </style>
