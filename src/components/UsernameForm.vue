@@ -4,7 +4,13 @@
       <sui-form-field @submit.stop.prevent="createRoom" style="align-text: center;">
         <input placeholder="enter your name" type="text" v-model="name" class="btn-join" />
       </sui-form-field>
-      <sui-button type="submit" class="btn-enter" size="large" animated @click.prevent="createRoom">
+      <sui-button
+        type="submit"
+        class="btn-enter"
+        size="large"
+        animated
+        @click.prevent="createRoom"
+      >
         <sui-button-content visible>Enter</sui-button-content>
         <sui-button-content
           hidden
@@ -19,7 +25,13 @@
       <sui-form-field @submit.stop.prevent="joinRoom" style="align-text: center;">
         <input placeholder="enter key room" type="text" v-model="roomID" class="btn-join" />
       </sui-form-field>
-      <sui-button type="submit" class="btn-enter" size="large" animated @click.prevent="joinRoom">
+      <sui-button
+        type="submit"
+        class="btn-enter"
+        size="large"
+        animated
+        @click.prevent="joinRoom"
+      >
         <sui-button-content visible>Join</sui-button-content>
         <sui-button-content hidden>
           <sui-icon size="large" name="sign in alternate" />
@@ -40,65 +52,65 @@
       </sui-form>
     </div>
     <audio autoplay loop>
-      <source src="../assets/Final Fantasy VII Chocobo Theme.mp3" type="audio/mp3" />
+      <source src="../../../old-config/assets/Final Fantasy VII Chocobo Theme.mp3" type="audio/mp3">
     </audio>
   </div>
 </template>
 
 <script>
-import swal from "sweetalert2";
+import swal from 'sweetalert2'
 export default {
-  name: "UsernameForm",
-  data() {
+  name: 'UsernameForm',
+  data () {
     return {
-      name: "",
-      user: "",
-      roomID: "",
+      name: '',
+      user: '',
+      roomID: '',
       createOpt: false,
       joinOpt: false
-    };
+    }
   },
   methods: {
-    created() {
-      if (this.name.length > 0) this.$store.dispatch("createRoom", this.name);
+    created () {
+      if (this.name.length > 0) this.$store.dispatch('createRoom', this.name)
       else {
         swal.fire({
-          title: "input your name"
-        });
+          title: 'input your name'
+        })
       }
     },
-    joined() {
-      if (this.name.length > 0) this.joinOpt = true;
+    joined () {
+      if (this.name.length > 0) this.joinOpt = true
       else {
         swal.fire({
-          title: "input your name"
-        });
+          title: 'input your name'
+        })
       }
     },
-    createRoom() {
-      if (this.name.length > 0) this.$store.dispatch("createRoom", this.name);
+    createRoom () {
+      if (this.name.length > 0) this.$store.dispatch('createRoom', this.name)
       else {
         swal.fire({
-          title: "input your name"
-        });
+          title: 'input your name'
+        })
       }
       // this.name = ''
     },
-    joinRoom() {
+    joinRoom () {
       if (this.name.length > 0) {
         let payload = {
           id: this.roomID,
           user: this.name
-        };
-        this.$store.dispatch("joinRoom", payload);
+        }
+        this.$store.dispatch('joinRoom', payload)
       } else {
         swal.fire({
-          title: "input your name"
-        });
+          title: 'input your name'
+        })
       }
     }
   }
-};
+}
 </script>
 
 <style scoped>
@@ -124,12 +136,15 @@ export default {
   25% {
     background: rgb(166, 233, 246);
   }
+
   50% {
     background: rgb(193, 233, 129);
   }
+
   75% {
     background: rgb(235, 210, 85);
   }
+
   100% {
     background: rgb(236, 156, 112);
   }
