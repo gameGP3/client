@@ -4,7 +4,7 @@
       <sui-table unstackable class="dash">
         <sui-table-header class="dash-head">
           <!-- <sui-icon name="trophy icon" size="small" /> -->
-          <strong>SCORE</strong>
+          <strong class="cursor">SCORE</strong>
         </sui-table-header>
         <sui-table-body style="display: flex; justify-content: space-evenly;">
           <sui-table-row>
@@ -84,23 +84,16 @@
 
     <div id="race" v-if="check">
       <!-- <button class="btn btn-success" id="myida" ref="myida" style="width: 100px; height:100px" v-on:click.prevent="addScore">Nyamuk</button> -->
-      <input
-        v-on:click.prevent="addScore(1)"
-        id="myida"
-        type="image"
-        src="https://i.imgur.com/JnlxCId.png"
-        style="width:100px"
-      />
-
-      <input type="image" src="https://i.imgur.com/JnlxCId.png" style="width:100px; height: 100px" id="myidb" ref="myidb" v-on:click.prevent="addScore(5)">
-      <input type="image" src="https://i.imgur.com/JnlxCId.png" style="width:100px; height: 100px" id="myidc" ref="myidc" v-on:click.prevent="addScore(10)">
-      <input type="image" src="https://i.imgur.com/JnlxCId.png" style="width:100px; height: 100px" id="myidd" ref="myidd" v-on:click.prevent="addScore(12)">
-      <input type="image" src="https://i.imgur.com/JnlxCId.png" style="width:100px; height: 100px" id="myide" ref="myide" v-on:click.prevent="addScore(15)">
       <input type="image" src="https://i.imgur.com/JnlxCId.png" style="width:100px; height: 100px" id="myidf" ref="myidf" v-on:click.prevent="addScore(1)">
-      <input type="image" src="https://i.imgur.com/JnlxCId.png" style="width:100px; height: 100px" id="myidg" ref="myidg" v-on:click.prevent="addScore(1)">
       <input type="image" src="https://i.imgur.com/JnlxCId.png" style="width:100px; height: 100px" id="myidh" ref="myidh" v-on:click.prevent="addScore(1)">
-      <input type="image" src="https://i.imgur.com/JnlxCId.png" style="width:100px; height: 100px" id="myidi" ref="myidi" v-on:click.prevent="addScore(1)">
-      <input type="image" src="https://i.imgur.com/JnlxCId.png" style="width:100px; height: 100px" id="myidj" ref="myidj" v-on:click.prevent="addScore(1)">
+      <input type="image" src="https://i.imgur.com/JnlxCId.png" style="width:100px; height: 100px" id="myidc" ref="myidc" v-on:click.prevent="addScore(1)">
+      <input type="image" src="https://i.imgur.com/JnlxCId.png" style="width:100px; height: 100px" id="myidd" ref="myidd" v-on:click.prevent="addScore(1)">
+      <input type="image" src="https://i.imgur.com/JnlxCId.png" style="width:100px; height: 100px" id="myide" ref="myide" v-on:click.prevent="addScore(1)">
+      <input type="image" src="https://i.imgur.com/8uSA4S3.png" style="width:100px; height: 100px" id="myida" ref="myida" v-on:click.prevent="addScore(-10)">
+      <input type="image" src="https://i.imgur.com/JnlxCId.png" style="width:100px; height: 100px" id="myidg" ref="myidg" v-on:click.prevent="addScore(1)">
+      <input type="image" src="https://i.imgur.com/8uSA4S3.png" style="width:100px; height: 100px" id="myidb" ref="myidb" v-on:click.prevent="addScore(-5)">
+      <input type="image" src="https://i.imgur.com/JnlxCId.png" style="width:100px; height: 100px" id="myidi" ref="myidi" v-on:click.prevent="pause()">
+      <input type="image" src="https://i.imgur.com/JnlxCId.png" style="width:100px; height: 100px" id="myidj" ref="myidj" v-on:click.prevent="pause()">
       <a v-if="!started" v-on:click.prevent="getStarted">Get Started</a>
     </div>
     <div class="end" v-if="!check" @click="backToHome">
@@ -118,6 +111,7 @@
 <script>
 import db from '../config/firestore'
 import router from '../router'
+import swal from 'sweetalert2'
 export default {
   name: 'Race',
   data () {
@@ -240,10 +234,13 @@ export default {
         var h = new RandomObjectMover(document.getElementById('myidh'), window)
         var i = new RandomObjectMover(document.getElementById('myidi'), window)
         var j = new RandomObjectMover(document.getElementById('myidj'), window)
+        var k = new RandomObjectMover(document.getElementById('myidk'), window)
+        var l = new RandomObjectMover(document.getElementById('myidl'), window)
+        a.setSpeed(1500)
         a.start()
-        b.setSpeed(200)
+        b.setSpeed(1500)
         b.start()
-        c.setSpeed(1000)
+        c.setSpeed(200)
         c.start()
         d.setSpeed(1500)
         d.start()
@@ -277,6 +274,37 @@ export default {
       }
       console.log(payload)
       this.$store.dispatch('updateScore', payload)
+    },
+    pause () {
+      let timerInterval
+      swal.fire({
+        title: 'Upppsssss Zonkk!',
+        html: 'Sorry Gaes you have to wait <b></b> milliseconds.',
+        timer: 10000,
+        timerProgressBar: true,
+        allowOutsideClick: false,
+        imageUrl: 'https://media1.tenor.com/images/97deb53d23c58a7b3152bd41bb1919df/tenor.gif?itemid=15288298',
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: 'Custom image',
+        onBeforeOpen: () => {
+          swal.showLoading()
+          timerInterval = setInterval(() => {
+            swal.getContent().querySelector('b')
+              .textContent = swal.getTimerLeft()
+          }, 100)
+        },
+        onClose: () => {
+          clearInterval(timerInterval)
+        }
+      }).then((result) => {
+        if (
+          /* Read more about handling dismissals below */
+          result.dismiss === swal.DismissReason.timer
+        ) {
+          console.log('I was closed by the timer') // eslint-disable-line
+        }
+      })
     }
   },
   created () {
@@ -398,6 +426,10 @@ export default {
 
   background-size: cover;
   background-position-x: center;
+}
+
+.cursor {
+  cursor: url('../assets/hammer.svg'), auto;
 }
 /* .end{
   margin-top: 200px;
