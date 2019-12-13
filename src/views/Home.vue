@@ -28,7 +28,7 @@
     },
     methods: {
       backToHome() {
-        location.reload()
+        location.reload():
       },
       show() {
         db.collection("rooms")
