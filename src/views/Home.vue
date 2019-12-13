@@ -3,6 +3,7 @@
     <div id="homepage">
       <img src="../assets/giphy.gif" alt style="width:250px; height:200px; margin-top:50px" />
       <h1>Tikoes !</h1>
+      <h3>the best of enemies</h3>
       <UsernameForm></UsernameForm>
     </div>
   </div>
@@ -16,7 +17,7 @@ export default {
   name: "Home",
   components: {
     UsernameForm
-  }, 
+  },
   data() {
     return {
       name: "",
@@ -59,6 +60,7 @@ export default {
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Caveat+Brush|Covered+By+Your+Grace|Gloria+Hallelujah|Holtwood+One+SC|Patrick+Hand+SC&display=swap");
 /* font type mau di ganti kah ? */
 
@@ -75,11 +77,20 @@ export default {
   background-color: rgb(255, 255, 255);
 }
 
-#homepage h1 {
+h1 {
   font-family: "Caveat Brush", cursive;
   animation: 3s ease 0s infinite alternate none running logos;
   font-size: 70px;
   margin-top: 0;
+  margin-bottom: 0;
+  font-size: 100px;
+}
+h3 {
+  font-family: "Caveat Brush", cursive;
+  animation: 3s ease 0s infinite alternate none running logos;
+  font-size: 40px !important;
+  margin-top: 0;
+  margin-bottom: 20px;
   font-size: 100px;
 }
 

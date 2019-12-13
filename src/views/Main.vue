@@ -9,7 +9,18 @@
         </sui-button-content>
       </sui-button>
     </div>
-    <h1 v-if="!raceNow && !ready">lets catch jerry the "tikoes"</h1>
+    <br />
+    <p
+      v-if="!raceNow && !ready"
+      style="text-align: center !important; font-weight: bold;"
+    >GAME RULE'S</p>
+    <div v-if="!raceNow && !ready" class="rule">
+      <p>1. hit the fastest mouse = ++5 point</p>
+      <p>2. hit another mouse = ++1 point</p>
+      <p>3. hit Tom the cat = --10 point</p>
+      <p>4. hit zonk mouse = got freeze 5s</p>
+    </div>
+    <h1 v-if="!raceNow && !ready">lets catch Jerry the "tikoes"</h1>
     <Countdown v-if="ready"></Countdown>
     <Race id="race" v-if="raceNow"></Race>
     <!-- <audio autoplay loop> -->
@@ -59,6 +70,23 @@ export default {
 </script>
 
 <style scoped>
+.rule {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border: 1px solid black;
+  padding: 10px;
+}
+p {
+  letter-spacing: 0.12em;
+  font-size: 15px;
+}
+.rule p {
+  margin: 0px;
+  padding: 0px;
+}
 #main2 {
   display: flex;
   flex-direction: column;
@@ -70,7 +98,7 @@ export default {
   height: 46vh;
   width: 29.94%;
   background-image: url("https://media.giphy.com/media/amWGMfliqCnjq/giphy.gif");
-  background-size: contain;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
