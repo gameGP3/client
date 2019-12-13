@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <audio autoplay loop controls volume="0">
+      <source src="./assets/sound/background-music-for-playing.mp3" type="audio/ogg">
+    </audio>
     <router-view />
   </div>
 </template>
@@ -17,4 +20,8 @@
   margin: 0;
   padding: 0;
 }
+
+  audio{
+    position: absolute;
+  }
 </style>

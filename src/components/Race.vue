@@ -1,5 +1,13 @@
 <template>
   <div id="main" style="border:none;">
+    <audio ref="mouseCaugh">
+      <source src="../assets/sound/mouse-caugh.wav" type="audio/wav">
+      Your browser does not support the audio element.
+    </audio>
+    <audio ref="mouseLaugh">
+      <source src="../assets/sound/mice-laughing-at-greystripe.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
     <div id="dashboard">
       <sui-table unstackable class="dash">
         <sui-table-header class="dash-head">
@@ -76,6 +84,7 @@
         style="width:100px; height: 100px"
         id="myidf"
         ref="myidf"
+        @click="audioMouseCaugh"
         v-on:click.prevent="addScore(1)"
       />
       <input
@@ -84,6 +93,7 @@
         style="width:100px; height: 100px"
         id="myidh"
         ref="myidh"
+        @click="audioMouseCaugh"
         v-on:click.prevent="addScore(1)"
       />
       <input
@@ -92,6 +102,7 @@
         style="width:100px; height: 100px"
         id="myidc"
         ref="myidc"
+        @click="audioMouseCaugh"
         v-on:click.prevent="addScore(1)"
       />
       <input
@@ -100,6 +111,7 @@
         style="width:100px; height: 100px"
         id="myidd"
         ref="myidd"
+        @click="audioMouseCaugh"
         v-on:click.prevent="addScore(5)"
       />
       <input
@@ -108,6 +120,7 @@
         style="width:100px; height: 100px"
         id="myide"
         ref="myide"
+        @click="audioMouseCaugh"
         v-on:click.prevent="addScore(5)"
       />
       <input
@@ -116,6 +129,7 @@
         style="width:100px; height: 100px"
         id="myida"
         ref="myida"
+        @click="audioMouseLaugh"
         v-on:click.prevent="addScore(-10)"
       />
       <input
@@ -124,6 +138,7 @@
         style="width:100px; height: 100px"
         id="myidg"
         ref="myidg"
+        @click="audioMouseCaugh"
         v-on:click.prevent="addScore(1)"
       />
       <input
@@ -132,6 +147,7 @@
         style="width:100px; height: 100px"
         id="myidb"
         ref="myidb"
+        @click="audioMouseLaugh"
         v-on:click.prevent="addScore(-5)"
       />
       <input
@@ -140,6 +156,7 @@
         style="width:100px; height: 100px"
         id="myidi"
         ref="myidi"
+        @click="audioMouseLaugh"
         v-on:click.prevent="pause()"
       />
       <input
@@ -148,6 +165,7 @@
         style="width:100px; height: 100px"
         id="myidj"
         ref="myidj"
+        @click="audioMouseLaugh"
         v-on:click.prevent="pause()"
       />
       <a v-if="!started" v-on:click.prevent="getStarted">Get Started</a>
@@ -184,6 +202,12 @@
       };
     },
     methods: {
+      audioMouseCaugh() {
+        this.$refs.mouseCaugh.play();
+      },
+      audioMouseLaugh() {
+        this.$refs.mouseLaugh.play();
+      },
       backToHome() {
         router.push("/");
       },
