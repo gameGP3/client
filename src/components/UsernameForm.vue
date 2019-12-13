@@ -2,15 +2,9 @@
   <div class="formUsername">
     <sui-form v-show="createOpt" size="huge">
       <sui-form-field @submit.stop.prevent="createRoom" style="align-text: center;">
-        <input placeholder="enter your name" type="text" v-model="name" class="btn-join" />
+        <input placeholder="Enter your name*" type="text" v-model="name" class="btn-join" />
       </sui-form-field>
-      <sui-button
-        type="submit"
-        class="btn-enter"
-        size="large"
-        animated
-        @click.prevent="createRoom"
-      >
+      <sui-button type="submit" class="btn-enter" size="large" animated @click.prevent="createRoom">
         <sui-button-content visible>Enter</sui-button-content>
         <sui-button-content
           hidden
@@ -23,15 +17,9 @@
 
     <sui-form v-show="joinOpt" size="huge">
       <sui-form-field @submit.stop.prevent="joinRoom" style="align-text: center;">
-        <input placeholder="enter key room" type="text" v-model="roomID" class="btn-join" />
+        <input placeholder="enter key room*" type="text" v-model="roomID" class="btn-join" />
       </sui-form-field>
-      <sui-button
-        type="submit"
-        class="btn-enter"
-        size="large"
-        animated
-        @click.prevent="joinRoom"
-      >
+      <sui-button type="submit" class="btn-enter" size="large" animated @click.prevent="joinRoom">
         <sui-button-content visible>Join</sui-button-content>
         <sui-button-content hidden>
           <sui-icon size="large" name="sign in alternate" />
@@ -47,75 +35,74 @@
         <div is="sui-button-group">
           <sui-button class="btn-enter" @click.stop.prevent="created">Create</sui-button>
           <sui-button-or />
-          <sui-button class="btn-enter" @click.stop.prevent="joined">Join</sui-button>
+          <sui-button class="btn-enter" @click.stop.prevent="joined">Join room</sui-button>
         </div>
       </sui-form>
     </div>
     <!-- <audio autoplay loop>
       <source src="../assets/Final Fantasy VII Chocobo Theme.mp3" type="audio/mp3" />
     </audio>-->
-
   </div>
 </template>
 
 <script>
-import swal from 'sweetalert2'
+import swal from "sweetalert2";
 export default {
-  name: 'UsernameForm',
-  data () {
+  name: "UsernameForm",
+  data() {
     return {
-      name: '',
-      user: '',
-      roomID: '',
+      name: "",
+      user: "",
+      roomID: "",
       createOpt: false,
       joinOpt: false
-    }
+    };
   },
   methods: {
-    created () {
-      if (this.name.length > 0) this.$store.dispatch('createRoom', this.name)
+    created() {
+      if (this.name.length > 0) this.$store.dispatch("createRoom", this.name);
       else {
         swal.fire({
-          title: 'please input your name',
-          icon: 'warning'
-        })
+          title: "please input your name",
+          icon: "warning"
+        });
       }
     },
-    joined () {
-      if (this.name.length > 0) this.joinOpt = true
+    joined() {
+      if (this.name.length > 0) this.joinOpt = true;
       else {
         swal.fire({
-          title: 'please input your name',
-          icon: 'warning'
-        })
+          title: "please input your name",
+          icon: "warning"
+        });
       }
     },
-    createRoom () {
-      if (this.name.length > 0) this.$store.dispatch('createRoom', this.name)
+    createRoom() {
+      if (this.name.length > 0) this.$store.dispatch("createRoom", this.name);
       else {
         swal.fire({
-          title: 'input your name',
-          icon: 'warning'
-        })
+          title: "input your name",
+          icon: "warning"
+        });
       }
       // this.name = ''
     },
-    joinRoom () {
+    joinRoom() {
       if (this.name.length > 0) {
         let payload = {
           id: this.roomID,
           user: this.name
-        }
-        this.$store.dispatch('joinRoom', payload)
+        };
+        this.$store.dispatch("joinRoom", payload);
       } else {
         swal.fire({
-          title: 'input your name',
-          icon: 'warning'
-        })
+          title: "input your name",
+          icon: "warning"
+        });
       }
     }
   }
-}
+};
 </script>
 
 <style scoped>

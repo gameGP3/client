@@ -2,7 +2,7 @@
   <div>
     <div id="homepage">
       <img src="../assets/image1.jpg" alt style="width:300px" />
-      <h1>Ka-Boot !</h1>
+      <h1>teekoes-got !</h1>
       <UsernameForm></UsernameForm>
     </div>
   </div>
