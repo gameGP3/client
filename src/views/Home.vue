@@ -129,33 +129,16 @@ h3 {
     color: orangered;
   }
 
-  #homepage h1 {
-    font-family: "Caveat Brush", cursive;
-    animation: 3s ease 0s infinite alternate none running logos;
-    font-size: 70px;
-    margin-top: 0;
-    font-size: 100px;
+  50% {
+    color: goldenrod;
   }
 
-  @keyframes logos {
-    0% {
-      color: crimson;
-    }
-    25% {
-      color: orangered;
-    }
+  75% {
+    color: black;
+  }
 
-    50% {
-      color: goldenrod;
-    }
-
-    75% {
-      color: black;
-    }
-
-    100% {
-      color: darkcyan;
-    }
+  100% {
+    color: darkcyan;
   }
 }
 </style>
