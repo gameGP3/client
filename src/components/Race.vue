@@ -335,7 +335,7 @@ export default {
   width: auto;
 }
 #race {
-  background-image: url("../assets/Space-Phone-Wallpaper.jpg");
+  background-image: url("../assets/background.webp");
 
   background-attachment: fixed;
   background-blend-mode: soft-light;
