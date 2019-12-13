@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="homepage">
-      <img src="../assets/image1.jpg" alt style="width:300px" />
+      <img src="../assets/giphy.gif" alt style="width:250px; height:200px; margin-top:50px" />
       <h1>Ka-Boot !</h1>
       <UsernameForm></UsernameForm>
     </div>
@@ -16,7 +16,7 @@ export default {
   name: "Home",
   components: {
     UsernameForm
-  },
+  }, 
   data() {
     return {
       name: "",
@@ -73,7 +73,7 @@ export default {
   -webkit-box-pack: center;
   height: 100vh;
   width: 100%;
-  background-color: rgb(26, 26, 26);
+  background-color: rgb(255, 255, 255);
 }
 
 #homepage h1 {
