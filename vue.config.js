@@ -1,3 +1,6 @@
 module.exports = {
-  lintOnSave: true
-}
+  // lintOnSave: true
+  chainWebpack: config => {
+    config.module.rules.delete('eslint');
+  }
+};

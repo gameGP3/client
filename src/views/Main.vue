@@ -91,7 +91,7 @@ export default {
     align-items: center;
     height: 50vh;
     width: 50%;
-    background-image: url("../assets/bugatti_gif.gif");
+    background-image: url('../assets/bugatti_gif.gif');
   }
 }
 </style>
