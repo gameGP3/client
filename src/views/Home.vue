@@ -2,7 +2,7 @@
   <div>
     <div id="homepage">
       <img src="../assets/giphy.gif" alt style="width:250px; height:200px; margin-top:50px" />
-      <h1>Ka-Boot !</h1>
+      <h1>Tikoes !</h1>
       <UsernameForm></UsernameForm>
     </div>
   </div>
