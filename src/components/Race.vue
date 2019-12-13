@@ -371,14 +371,6 @@
           if (this.score > 100) {
             console.log("masuk batas score");
 
-            // swal.fire({
-            //   title: "WINNNNN !!! \n " + temp.member0.username + " the Real TEAKOESMINATOR ",
-            //   width: 600,
-            //   padding: '3em',
-            //   // background: '#fff url(/images/trees.png)',
-            //   backdrop: 'rgba(0,0,123,0.4) url("https://i.gifer.com/yC.gif") left top no-repeat'
-            // })
-
             swal.fire({
               title: "WINNNNN !!! \n " + temp.member0.username + " the Real TEAKOESMINATOR ",
               // text: 'Modal with a custom image.',
@@ -391,9 +383,19 @@
               this.backToHome();
             });
 
+            // db.collection("rooms")
+            //   .doc(this.$store.state.roomID)
+            //   .update({status: false});
+
             db.collection("rooms")
               .doc(this.$store.state.roomID)
-              .update({status: false});
+              .delete()
+              .then(() => {
+                console.log("room sucessfully deleted")
+              })
+              .catch(err => {
+                console.log("room error deleted !!!")
+              })
           }
         });
     }

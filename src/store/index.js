@@ -55,9 +55,17 @@ export default new Vuex.Store({
     joinRoom({commit}, payload) {
       let count
       commit('CREATE_ROOM', payload.id)
-      localStorage.setItem('roomID', payload.id)
+      localStorage.setItem('roomID', payload.id);
+
       db.collection('rooms').doc(payload.id).get()
         .then(result => {
+          console.log(result._document)
+          if (result._document === null) {
+            throw "Hahahaha Room Not Found !! \n you can't catch me !!!"
+          }
+          if (!result.data().status) {
+            throw "You can not join this room !! \n this room already over !!!"
+          }
           console.log(result.data().count)
           count = Number(result.data().count)
           count++
@@ -92,7 +100,7 @@ export default new Vuex.Store({
         })
         .catch(err => {
           swal.fire({
-            title: err.title,
+            title: err,
             icon: 'error',
             timer: 2000
           })
