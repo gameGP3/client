@@ -46,7 +46,6 @@ export default {
       this.$store.dispatch("joinRoom", payload);
     },
     updateScore() {
-      // this.roomID = localStorage.getItem('roomID')
       let payload = {
         id: localStorage.getItem("roomID"),
         score: 5,
