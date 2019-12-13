@@ -19,43 +19,43 @@
 </template>
 
 <script>
-import Countdown from '@/components/Countdown'
-import Race from '@/components/Race'
-import db from '../config/firestore'
+import Countdown from "@/components/Countdown";
+import Race from "@/components/Race";
+import db from "../config/firestore";
 export default {
-  name: 'Main',
+  name: "Main",
   components: {
     Countdown,
     Race
   },
-  data () {
+  data() {
     return {
       ready: false,
       raceNow: false
-    }
+    };
   },
   methods: {
-    start () {
-      this.ready = true
-      db.collection('rooms')
+    start() {
+      this.ready = true;
+      db.collection("rooms")
         .doc(this.$store.state.roomID)
         .update({ status: true })
         .then(() => {
           // this.started = true
           // this.check = true
-          this.$store.commit('UPDATE_STATUS', true)
+          this.$store.commit("UPDATE_STATUS", true);
         })
         .catch(err => {
-          this.$store.commit('UPDATE_STATUS', false)
-        })
-      setTimeout(this.race, 3500)
+          this.$store.commit("UPDATE_STATUS", false);
+        });
+      setTimeout(this.race, 3500);
     },
-    race () {
-      this.ready = false
-      this.raceNow = true
+    race() {
+      this.ready = false;
+      this.raceNow = true;
     }
   }
-}
+};
 </script>
 
 <style scoped>
