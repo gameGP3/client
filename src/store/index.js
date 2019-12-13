@@ -15,25 +15,25 @@ export default new Vuex.Store({
     status: false
   },
   mutations: {
-    CREATE_ROOM (state, payload) {
+    CREATE_ROOM(state, payload) {
       state.roomID = payload
     },
-    JOIN_ROOM (state, payload) {
+    JOIN_ROOM(state, payload) {
       state.member.push(payload)
     },
-    UPDATE_SCORE (state, payload) {
+    UPDATE_SCORE(state, payload) {
 
     },
-    UPDATE_NAME (state, payload) {
+    UPDATE_NAME(state, payload) {
       state.name = payload
     },
-    UPDATE_STATUS (state, payload) {
+    UPDATE_STATUS(state, payload) {
       state.status = payload
     }
   },
   actions: {
-    createRoom ({ commit }, payload) {
-      db.collection('rooms').add({ 'member0': { 'username': payload, 'score': 0 }, count: 0, status: false })
+    createRoom({commit}, payload) {
+      db.collection('rooms').add({'member0': {'username': payload, 'score': 0}, count: 0, status: false})
         .then(result => {
           commit('CREATE_ROOM', result.id)
           localStorage.setItem('roomID', result.id)
@@ -52,7 +52,7 @@ export default new Vuex.Store({
           router.push('/race')
         })
     },
-    joinRoom ({ commit }, payload) {
+    joinRoom({commit}, payload) {
       let count
       commit('CREATE_ROOM', payload.id)
       localStorage.setItem('roomID', payload.id)
@@ -62,7 +62,9 @@ export default new Vuex.Store({
           count = Number(result.data().count)
           count++
           if (count < 4) {
-            return db.collection('rooms').doc(payload.id).update({ [`member${count}`]: { 'username': payload.user, 'score': 0 }, count })
+            return db.collection('rooms')
+              .doc(payload.id)
+              .update({[`member${count}`]: {'username': payload.user, 'score': 0}, count})
           } else {
             console.log('masuk else')
             throw {
@@ -97,7 +99,7 @@ export default new Vuex.Store({
           console.log(err, 'gagal')
         })
     },
-    updateScore ({ commit }, payload) {
+    updateScore({commit}, payload) {
       db.collection('rooms').doc(payload.id).get()
         .then(result => {
           let temp = result.data()
@@ -117,9 +119,8 @@ export default new Vuex.Store({
         })
     }
   },
-  created () {
+  created() {
 
   },
-  modules: {
-  }
+  modules: {}
 })
