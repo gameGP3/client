@@ -332,7 +332,7 @@ export default {
         .fire({
           title: "Upppsssss Zonkk!",
           html: "Sorry Gaes you have to wait <b></b> milliseconds.",
-          timer: 5000,
+          timer: 3000,
           timerProgressBar: true,
           allowOutsideClick: false,
           imageUrl:
