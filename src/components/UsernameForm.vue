@@ -76,29 +76,27 @@ export default {
       if (this.name.length > 0) this.$store.dispatch('createRoom', this.name)
       else {
         swal.fire({
-          title: "please input your name",
-          icon: "warning"
-        });
-
+          title: 'please input your name',
+          icon: 'warning'
+        })
       }
     },
     joined () {
       if (this.name.length > 0) this.joinOpt = true
       else {
         swal.fire({
-          title: "please input your name",
-          icon: "warning"
-        });
+          title: 'please input your name',
+          icon: 'warning'
+        })
       }
     },
     createRoom () {
       if (this.name.length > 0) this.$store.dispatch('createRoom', this.name)
       else {
         swal.fire({
-          title: "input your name",
-          icon: "warning"
-        });
-
+          title: 'input your name',
+          icon: 'warning'
+        })
       }
       // this.name = ''
     },
@@ -111,10 +109,9 @@ export default {
         this.$store.dispatch('joinRoom', payload)
       } else {
         swal.fire({
-          title: "input your name",
-          icon: "warning"
-        });
-
+          title: 'input your name',
+          icon: 'warning'
+        })
       }
     }
   }

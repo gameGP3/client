@@ -1,9 +1,8 @@
 <template>
   <div>
     <div id="homepage">
-      <img src="@/assets/image1.jpg" alt style="width:300px" /> 
-      <!-- blom ganti image, ingat ! -->
-      <h1>TeaKoes Goat !</h1>
+      <img src="../assets/image1.jpg" alt style="width:300px" />
+      <h1>Ka-Boot !</h1>
       <UsernameForm></UsernameForm>
     </div>
   </div>
