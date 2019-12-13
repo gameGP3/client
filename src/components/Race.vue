@@ -1,8 +1,5 @@
 <template>
-  <div
-    style="border:none; cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/happy.png)
-    auto;"
-  >
+  <div id="main" style="border:none;">
     <div id="dashboard">
       <sui-table unstackable class="dash">
         <sui-table-header class="dash-head">
@@ -67,8 +64,7 @@
         </sui-table-body>
       </sui-table>
     </div>
-
-    <div id="race" v-if="check">
+    <div id="race2" v-if="check">
       <!-- <button class="btn btn-success" id="myida" ref="myida" style="width: 100px; height:100px" v-on:click.prevent="addScore">Nyamuk</button> -->
       <input
         type="image"
@@ -415,23 +411,35 @@ export default {
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css?family=Caveat+Brush|Covered+By+Your+Grace|Gloria+Hallelujah|Holtwood+One+SC|Patrick+Hand+SC&display=swap");
-
-#dashboard {
+#main {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
+.dashboard {
+  display: fixed;
+  top: 0;
+}
+
 * {
   font-family: "Patrick Hand SC";
   color: rgb(209, 157, 16);
   font-weight: bolder;
   width: auto;
+  cursor: url("../assets/hammer.svg"), auto !important;
 }
-#race {
+#race2 {
+  position: relative;
   background-image: url("../assets/background.webp");
 
   background-attachment: fixed;
   background-blend-mode: soft-light;
-  background-size: contain;
-  width: 100%;
-  height: 100vh;
+  background-size: cover;
+  background-position-y: 80px;
+  width: 100vw;
+  height: 87vh;
+  /* top: 20vh; */
+  overflow: hidden;
 }
 #id {
   padding: 0;

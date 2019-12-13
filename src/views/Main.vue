@@ -1,5 +1,5 @@
 <template>
-  <div id="main">
+  <div id="main2">
     <h1 v-if="!raceNow && !ready">vroom vroom !</h1>
     <div v-if="!raceNow && !ready" class="startDiv">
       <sui-button size="huge" animated @click.prevent="start">
@@ -59,12 +59,12 @@ export default {
 </script>
 
 <style scoped>
-#main {
+#main2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  /* height: 100vh; */
 }
 .startDiv {
   height: 46vh;
@@ -91,7 +91,7 @@ export default {
     align-items: center;
     height: 50vh;
     width: 50%;
-    background-image: url('../assets/bugatti_gif.gif');
+    background-image: url("../assets/bugatti_gif.gif");
   }
 }
 </style>
