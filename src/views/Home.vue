@@ -77,10 +77,7 @@ export default {
 }
 
 #homepage h1 {
-  /* font-family: 'Gloria Hallelujah', cursive; */
   font-family: "Caveat Brush", cursive;
-  /* font-family: 'Gloria Hallelujah', cursive;
-    font-family: 'Gloria Hallelujah', cursive; */
   animation: 3s ease 0s infinite alternate none running logos;
   font-size: 70px;
   margin-top: 0;
