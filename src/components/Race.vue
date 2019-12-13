@@ -88,19 +88,19 @@
         v-on:click.prevent="addScore(1)"
         id="myida"
         type="image"
-        src="https://purepng.com/public/uploads/large/purepng.com-cloudnaturecloudsmoke-9615246757368kjiz.png"
+        src="https://i.imgur.com/JnlxCId.png"
         style="width:100px"
       />
 
-      <input type="image" src="https://purepng.com/public/uploads/large/purepng.com-cloudnaturecloudsmoke-9615246757368kjiz.png" style="width:100px; height: 100px" id="myidb" ref="myidb" v-on:click.prevent="addScore(5)">
-      <input type="image" src="https://purepng.com/public/uploads/large/purepng.com-cloudnaturecloudsmoke-9615246757368kjiz.png" style="width:100px; height: 100px" id="myidc" ref="myidc" v-on:click.prevent="addScore(10)">
-      <input type="image" src="https://purepng.com/public/uploads/large/purepng.com-cloudnaturecloudsmoke-9615246757368kjiz.png" style="width:100px; height: 100px" id="myidd" ref="myidd" v-on:click.prevent="addScore(12)">
-      <input type="image" src="https://purepng.com/public/uploads/large/purepng.com-cloudnaturecloudsmoke-9615246757368kjiz.png" style="width:100px; height: 100px" id="myide" ref="myide" v-on:click.prevent="addScore(15)">
-      <input type="image" src="https://purepng.com/public/uploads/large/purepng.com-cloudnaturecloudsmoke-9615246757368kjiz.png" style="width:100px; height: 100px" id="myidf" ref="myidf" v-on:click.prevent="addScore(1)">
-      <input type="image" src="https://purepng.com/public/uploads/large/purepng.com-cloudnaturecloudsmoke-9615246757368kjiz.png" style="width:100px; height: 100px" id="myidg" ref="myidg" v-on:click.prevent="addScore(1)">
-      <input type="image" src="https://purepng.com/public/uploads/large/purepng.com-cloudnaturecloudsmoke-9615246757368kjiz.png" style="width:100px; height: 100px" id="myidh" ref="myidh" v-on:click.prevent="addScore(1)">
-      <input type="image" src="https://purepng.com/public/uploads/large/purepng.com-cloudnaturecloudsmoke-9615246757368kjiz.png" style="width:100px; height: 100px" id="myidi" ref="myidi" v-on:click.prevent="addScore(1)">
-      <input type="image" src="https://purepng.com/public/uploads/large/purepng.com-cloudnaturecloudsmoke-9615246757368kjiz.png" style="width:100px; height: 100px" id="myidj" ref="myidj" v-on:click.prevent="addScore(1)">
+      <input type="image" src="https://i.imgur.com/JnlxCId.png" style="width:100px; height: 100px" id="myidb" ref="myidb" v-on:click.prevent="addScore(5)">
+      <input type="image" src="https://i.imgur.com/JnlxCId.png" style="width:100px; height: 100px" id="myidc" ref="myidc" v-on:click.prevent="addScore(10)">
+      <input type="image" src="https://i.imgur.com/JnlxCId.png" style="width:100px; height: 100px" id="myidd" ref="myidd" v-on:click.prevent="addScore(12)">
+      <input type="image" src="https://i.imgur.com/JnlxCId.png" style="width:100px; height: 100px" id="myide" ref="myide" v-on:click.prevent="addScore(15)">
+      <input type="image" src="https://i.imgur.com/JnlxCId.png" style="width:100px; height: 100px" id="myidf" ref="myidf" v-on:click.prevent="addScore(1)">
+      <input type="image" src="https://i.imgur.com/JnlxCId.png" style="width:100px; height: 100px" id="myidg" ref="myidg" v-on:click.prevent="addScore(1)">
+      <input type="image" src="https://i.imgur.com/JnlxCId.png" style="width:100px; height: 100px" id="myidh" ref="myidh" v-on:click.prevent="addScore(1)">
+      <input type="image" src="https://i.imgur.com/JnlxCId.png" style="width:100px; height: 100px" id="myidi" ref="myidi" v-on:click.prevent="addScore(1)">
+      <input type="image" src="https://i.imgur.com/JnlxCId.png" style="width:100px; height: 100px" id="myidj" ref="myidj" v-on:click.prevent="addScore(1)">
       <a v-if="!started" v-on:click.prevent="getStarted">Get Started</a>
     </div>
     <div class="end" v-if="!check" @click="backToHome">
@@ -116,7 +116,6 @@
 </template>
 
 <script>
-
 import db from '../config/firestore'
 import router from '../router'
 export default {
