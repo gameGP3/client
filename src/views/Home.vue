@@ -1,7 +1,12 @@
 <template>
   <div>
     <div id="homepage">
-      <img src="../assets/giphy.gif" alt style="width:250px; height:200px; margin-top:50px" />
+      <img
+        src="../assets/giphy.gif"
+        alt
+        style="width:250px; height:200px; margin-top:50px"
+        @click="backToHome"
+      />
       <h1>Tikoes !</h1>
       <h3>the best of enemies</h3>
       <UsernameForm></UsernameForm>
@@ -12,6 +17,7 @@
 <script>
 import db from "../config/firestore";
 import UsernameForm from "../components/UsernameForm";
+import router from "../router";
 
 export default {
   name: "Home",
@@ -35,25 +41,46 @@ export default {
           console.log(data, "isi data");
         });
     },
-    createRoom() {
-      this.$store.dispatch("createRoom", this.name);
-      // this.name = ''
-    },
-    joinRoom() {
-      let payload = {
-        id: this.roomID,
-        user: this.name
+    data() {
+      return {
+        name: "",
+        user: "",
+        roomID: "",
+        score: 0
       };
-      this.$store.dispatch("joinRoom", payload);
     },
-    updateScore() {
-      let payload = {
-        id: localStorage.getItem("roomID"),
-        score: 5,
-        username: this.name
-      };
-      console.log(payload);
-      this.$store.dispatch("updateScore", payload);
+    methods: {
+      backToHome() {
+        location.reload();
+      },
+      show() {
+        db.collection("rooms")
+          .doc(this.$store.state.roomID)
+          .onSnapshot(querySnapshot => {
+            let data = querySnapshot.data();
+            console.log(data, "isi data");
+          });
+      },
+      createRoom() {
+        this.$store.dispatch("createRoom", this.name);
+        // this.name = ''
+      },
+      joinRoom() {
+        let payload = {
+          id: this.roomID,
+          user: this.name
+        };
+        this.$store.dispatch("joinRoom", payload);
+      },
+      updateScore() {
+        let payload = {
+          id: localStorage.getItem("roomID"),
+          score: 5,
+          username: this.name
+        };
+        console.log(payload);
+        this.$store.dispatch("updateScore", payload);
+      }
     }
   }
 };
@@ -102,16 +129,33 @@ h3 {
     color: orangered;
   }
 
-  50% {
-    color: goldenrod;
+  #homepage h1 {
+    font-family: "Caveat Brush", cursive;
+    animation: 3s ease 0s infinite alternate none running logos;
+    font-size: 70px;
+    margin-top: 0;
+    font-size: 100px;
   }
 
-  75% {
-    color: black;
-  }
+  @keyframes logos {
+    0% {
+      color: crimson;
+    }
+    25% {
+      color: orangered;
+    }
 
-  100% {
-    color: darkcyan;
+    50% {
+      color: goldenrod;
+    }
+
+    75% {
+      color: black;
+    }
+
+    100% {
+      color: darkcyan;
+    }
   }
 }
 </style>

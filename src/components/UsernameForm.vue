@@ -23,7 +23,7 @@
 
     <sui-form v-show="joinOpt" size="huge">
       <sui-form-field @submit.stop.prevent="joinRoom" style="align-text: center;">
-        <input placeholder="enter key room" type="text" v-model="roomID" class="btn-join" />
+        <input placeholder="enter room key" type="text" v-model="roomID" class="btn-join" />
       </sui-form-field>
       <sui-button
         type="submit"
