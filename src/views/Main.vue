@@ -67,7 +67,8 @@ export default {
 .startDiv {
   height: 46vh;
   width: 29.94%;
-  background-image: url("../../../old-config/assets/bugatti_gif.gif");
+  /* background-image: url("@/assets/bugatti_gif.gif"); */
+  background-image: url("../assets/bugatti_gif.gif");
   background-size: contain;
   display: flex;
   justify-content: center;
@@ -89,7 +90,8 @@ export default {
     align-items: center;
     height: 50vh;
     width: 50%;
-    background-image: url("../../../old-config/assets/bugatti_gif.gif");
+    /* background-image: url("@/assets/bugatti_gif.gif"); */
+    background-image: url("../assets/bugatti_gif.gif");
   }
 }
 </style>

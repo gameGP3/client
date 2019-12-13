@@ -1,8 +1,9 @@
 <template>
   <div>
     <div id="homepage">
-      <img src="../../../old-config/assets/image1.jpg" alt style="width:300px" />
-      <h1>Ka-Boot !</h1>
+      <img src="@/assets/image1.jpg" alt style="width:300px" /> 
+      <!-- blom ganti image, ingat ! -->
+      <h1>TeaKoes Goat !</h1>
       <UsernameForm></UsernameForm>
     </div>
   </div>
@@ -31,7 +32,7 @@ export default {
         .doc(this.$store.state.roomID)
         .onSnapshot(querySnapshot => {
           let data = querySnapshot.data();
-          console.log(data, "ini hasilnya");
+          console.log(data, "isi data");
         });
     },
     createRoom() {
