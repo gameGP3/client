@@ -63,7 +63,6 @@ export default {
 @import url("https://fonts.googleapis.com/css?family=Caveat+Brush|Covered+By+Your+Grace|Gloria+Hallelujah|Holtwood+One+SC|Patrick+Hand+SC&display=swap");
 /* font type mau di ganti kah ? */
 
-
 #homepage {
   display: flex;
   flex-direction: column;
@@ -78,10 +77,7 @@ export default {
 }
 
 #homepage h1 {
-  /* font-family: 'Gloria Hallelujah', cursive; */
   font-family: "Caveat Brush", cursive;
-  /* font-family: 'Gloria Hallelujah', cursive;
-    font-family: 'Gloria Hallelujah', cursive; */
   animation: 3s ease 0s infinite alternate none running logos;
   font-size: 70px;
   margin-top: 0;
@@ -107,4 +103,5 @@ export default {
   100% {
     color: darkcyan;
   }
+}
 </style>
