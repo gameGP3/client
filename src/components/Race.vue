@@ -72,7 +72,7 @@
         style="width:100px; height: 100px"
         id="myidf"
         ref="myidf"
-        v-on:click.prevent="addScore(1)"
+        v-on:click.prevent="addScore(2)"
       />
       <input
         type="image"
@@ -88,7 +88,7 @@
         style="width:100px; height: 100px"
         id="myidc"
         ref="myidc"
-        v-on:click.prevent="addScore(1)"
+        v-on:click.prevent="addScore(2)"
       />
       <input
         type="image"
@@ -96,7 +96,7 @@
         style="width:100px; height: 100px"
         id="myidd"
         ref="myidd"
-        v-on:click.prevent="addScore(5)"
+        v-on:click.prevent="addScore(10)"
       />
       <input
         type="image"
