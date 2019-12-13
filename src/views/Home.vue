@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="homepage">
-      <img src="../../../old-config/assets/image1.jpg" alt style="width:300px" />
+      <img src="../assets/image1.jpg" alt style="width:300px" />
       <h1>Ka-Boot !</h1>
       <UsernameForm></UsernameForm>
     </div>
@@ -63,7 +63,6 @@ export default {
 @import url("https://fonts.googleapis.com/css?family=Caveat+Brush|Covered+By+Your+Grace|Gloria+Hallelujah|Holtwood+One+SC|Patrick+Hand+SC&display=swap");
 /* font type mau di ganti kah ? */
 
-
 #homepage {
   display: flex;
   flex-direction: column;
@@ -107,4 +106,5 @@ export default {
   100% {
     color: darkcyan;
   }
+}
 </style>

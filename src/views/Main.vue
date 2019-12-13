@@ -37,7 +37,9 @@ export default {
   methods: {
     start () {
       this.ready = true
-      db.collection('rooms').doc(this.$store.state.roomID).update({ status: true })
+      db.collection('rooms')
+        .doc(this.$store.state.roomID)
+        .update({ status: true })
         .then(() => {
           // this.started = true
           // this.check = true
@@ -67,7 +69,7 @@ export default {
 .startDiv {
   height: 46vh;
   width: 29.94%;
-  background-image: url("../../../old-config/assets/bugatti_gif.gif");
+  background-image: url("../assets/bugatti_gif.gif");
   background-size: contain;
   display: flex;
   justify-content: center;
@@ -89,7 +91,7 @@ export default {
     align-items: center;
     height: 50vh;
     width: 50%;
-    background-image: url("../../../old-config/assets/bugatti_gif.gif");
+    background-image: url("../assets/bugatti_gif.gif");
   }
 }
 </style>
