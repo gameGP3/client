@@ -76,29 +76,27 @@ export default {
       if (this.name.length > 0) this.$store.dispatch('createRoom', this.name)
       else {
         swal.fire({
-          title: "please input your name",
-          icon: "warning"
-        });
-
+          title: 'please input your name',
+          icon: 'warning'
+        })
       }
     },
     joined () {
       if (this.name.length > 0) this.joinOpt = true
       else {
         swal.fire({
-          title: "please input your name",
-          icon: "warning"
-        });
+          title: 'please input your name',
+          icon: 'warning'
+        })
       }
     },
     createRoom () {
       if (this.name.length > 0) this.$store.dispatch('createRoom', this.name)
       else {
         swal.fire({
-          title: "input your name",
-          icon: "warning"
-        });
-
+          title: 'input your name',
+          icon: 'warning'
+        })
       }
       // this.name = ''
     },
@@ -111,10 +109,9 @@ export default {
         this.$store.dispatch('joinRoom', payload)
       } else {
         swal.fire({
-          title: "input your name",
-          icon: "warning"
-        });
-
+          title: 'input your name',
+          icon: 'warning'
+        })
       }
     }
   }
@@ -123,20 +120,22 @@ export default {
 
 <style scoped>
 .formUsername {
-  /* display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center; */
-  /* background-color: rgb(138, 154, 158); */
   flex: 1 0 auto;
-  /* animation: 5s ease 0s infinite alternate none running colorful; */
-  /* height: 50px; */
-  /* padding: 50px; */
-  /* width: 50%; */
 }
+
+.btn-join{
+  border: 1px solid black !important;
+}
+
+::placeholder{
+  color: rgb(17, 4, 4);
+  opacity: 1;
+}
+
 .btn-enter {
   animation: 5s ease 0s infinite alternate none running colorful;
 }
+
 @keyframes colorful {
   0% {
     background: rgb(138, 154, 158);
