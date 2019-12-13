@@ -8,6 +8,10 @@
       <source src="../assets/sound/mice-laughing-at-greystripe.mp3" type="audio/mp3">
       Your browser does not support the audio element.
     </audio>
+    <audio ref="tomcat">
+      <source src="../assets/sound/tomcat.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
     <div id="dashboard">
       <sui-table unstackable class="dash">
         <sui-table-header class="dash-head">
@@ -129,7 +133,7 @@
         style="width:100px; height: 100px"
         id="myida"
         ref="myida"
-        @click="audioMouseLaugh"
+        @click="audioTomCat"
         v-on:click.prevent="addScore(-10)"
       />
       <input
@@ -147,7 +151,7 @@
         style="width:100px; height: 100px"
         id="myidb"
         ref="myidb"
-        @click="audioMouseLaugh"
+        @click="audioTomCat"
         v-on:click.prevent="addScore(-5)"
       />
       <input
@@ -202,14 +206,14 @@
       };
     },
     methods: {
-      backToHome() {
-        router.push("/");
-      },
       audioMouseCaugh() {
         this.$refs.mouseCaugh.play();
       },
       audioMouseLaugh() {
         this.$refs.mouseLaugh.play();
+      },
+      audioTomCat() {
+        this.$refs.tomcat.play();
       },
       backToHome() {
         router.push("/");
