@@ -1,6 +1,6 @@
 <template>
   <div id="main2">
-    <h1 v-if="!raceNow && !ready">vroom vroom !</h1>
+    <h1 v-if="!raceNow && !ready">help Tom to get his revenge!</h1>
     <div v-if="!raceNow && !ready" class="startDiv">
       <sui-button size="huge" animated @click.prevent="start">
         <sui-button-content visible>START</sui-button-content>
@@ -9,7 +9,7 @@
         </sui-button-content>
       </sui-button>
     </div>
-    <h1 v-if="!raceNow && !ready">click click !</h1>
+    <h1 v-if="!raceNow && !ready">lets catch jerry the "tikoes"</h1>
     <Countdown v-if="ready"></Countdown>
     <Race id="race" v-if="raceNow"></Race>
     <!-- <audio autoplay loop> -->
@@ -64,12 +64,12 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* height: 100vh; */
+  height: 100vh;
 }
 .startDiv {
   height: 46vh;
   width: 29.94%;
-  background-image: url("../assets/bugatti_gif.gif");
+  background-image: url("https://media.giphy.com/media/amWGMfliqCnjq/giphy.gif");
   background-size: contain;
   display: flex;
   justify-content: center;
@@ -91,7 +91,7 @@ export default {
     align-items: center;
     height: 50vh;
     width: 50%;
-    background-image: url("../assets/bugatti_gif.gif");
+    background-image: url("https://media.giphy.com/media/amWGMfliqCnjq/giphy.gif");
   }
 }
 </style>
