@@ -1,8 +1,8 @@
 <template>
   <div>
     <div id="homepage">
-      <img src="../assets/image1.jpg" alt style="width:300px" />
-      <h1>Ka-Boot !</h1>
+      <img src="../assets/giphy.gif" alt style="width:250px; height:200px; margin-top:50px" />
+      <h1>Tikoes !</h1>
       <UsernameForm></UsernameForm>
     </div>
   </div>
@@ -16,7 +16,7 @@ export default {
   name: "Home",
   components: {
     UsernameForm
-  },
+  }, 
   data() {
     return {
       name: "",
@@ -31,7 +31,7 @@ export default {
         .doc(this.$store.state.roomID)
         .onSnapshot(querySnapshot => {
           let data = querySnapshot.data();
-          console.log(data, "ini hasilnya");
+          console.log(data, "isi data");
         });
     },
     createRoom() {
@@ -46,7 +46,6 @@ export default {
       this.$store.dispatch("joinRoom", payload);
     },
     updateScore() {
-      // this.roomID = localStorage.getItem('roomID')
       let payload = {
         id: localStorage.getItem("roomID"),
         score: 5,
@@ -73,7 +72,7 @@ export default {
   -webkit-box-pack: center;
   height: 100vh;
   width: 100%;
-  background-color: rgb(26, 26, 26);
+  background-color: rgb(255, 255, 255);
 }
 
 #homepage h1 {
