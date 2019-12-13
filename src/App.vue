@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <audio autoplay loop controls volume="0">
+    <audio autoplay loop controls>
       <source src="./assets/sound/background-music-for-playing.mp3" type="audio/ogg">
     </audio>
     <router-view />
