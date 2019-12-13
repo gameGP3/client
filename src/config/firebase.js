@@ -3,9 +3,9 @@ const firebase = require('firebase/app')
 require('firebase/firestore')
 
 firebase.initializeApp({
-  apiKey: "AIzaSyASf9fqX51K6-PGpaU1QG4thSLq55o2Uns",
-  authDomain: "teakoes-goat.firebaseapp.com",
-  projectId: "teakoes-goat"
-});
+  apiKey: 'AIzaSyASf9fqX51K6-PGpaU1QG4thSLq55o2Uns',
+  authDomain: 'teakoes-goat.firebaseapp.com',
+  projectId: 'teakoes-goat'
+})
 
 module.exports = firebase

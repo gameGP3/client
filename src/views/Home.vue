@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="homepage">
-      <img src="../../../old-config/assets/image1.jpg" alt style="width:300px" />
+      <img src="../assets/image1.jpg" alt style="width:300px" />
       <h1>Ka-Boot !</h1>
       <UsernameForm></UsernameForm>
     </div>
